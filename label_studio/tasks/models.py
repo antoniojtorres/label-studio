@@ -29,7 +29,6 @@ from data_import.models import FileUpload
 from data_manager.managers import PreparedTaskManager, TaskManager
 from django.conf import settings
 from django.contrib.auth.models import AnonymousUser
-from django.core.files.storage import default_storage
 from django.db import OperationalError, models, transaction
 from django.db.models import CheckConstraint, JSONField, Q
 from django.db.models.signals import post_delete, post_save, pre_delete, pre_save
@@ -451,13 +450,7 @@ class Task(TaskMixin, models.Model):
                     # permission check: resolve uploaded files to the project only
                     file_upload = fast_first(FileUpload.objects.filter(project=project, file=prepared_filename))
                     if file_upload is not None:
-                        if flag_set(
-                            'ff_back_dev_2915_storage_nginx_proxy_26092022_short',
-                            self.project.organization.created_by,
-                        ):
-                            task_data[field] = file_upload.url
-                        else:
-                            task_data[field] = default_storage.url(name=prepared_filename)
+                        task_data[field] = file_upload.url
                     # it's very rare case, e.g. user tried to reimport exported file from another project
                     # or user wrote his django storage path manually
                     else:
@@ -757,7 +750,14 @@ class Annotation(AnnotationMixin, models.Model):
             self.updated_by = request.user
             if update_fields is not None:
                 update_fields = {'updated_by'}.union(update_fields)
+
+        unique_list = {result.get('id') for result in (self.result or [])}
+
+        self.result_count = len(unique_list)
+        if update_fields is not None:
+            update_fields = {'result_count'}.union(update_fields)
         result = super().save(*args, update_fields=update_fields, **kwargs)
+
         self.update_task()
         return result
 

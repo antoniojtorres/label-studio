@@ -1,6 +1,6 @@
 {
-  "message": "fix: LEAP-1647: Fix comments when user uses OCR textarea (#6622)",
-  "commit": "2d82390dc4328c83f8c03ea3be0bf8f6730c0bf5",
-  "date": "2024-11-13T16:11:45.000Z",
+  "message": "fix: OPTIC-972: Hover effect over selected filter element is not applied (#6697)",
+  "commit": "b02fc7ef0cd16cadab0c44892d3455b24aebf501",
+  "date": "2024-11-22T11:14:19.000Z",
   "branch": "develop"
 }
