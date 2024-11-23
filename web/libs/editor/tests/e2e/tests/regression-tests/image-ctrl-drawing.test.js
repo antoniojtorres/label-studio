@@ -154,6 +154,7 @@ Scenario("Drawing with ctrl pressed", async ({ I, LabelStudio, AtSidebar, AtImag
     I.pressKey(["u"]);
     I.pressKey(innerRegion.hotKey);
     I.pressKeyDown("Control");
+    I.scrollToBottom();
     AtImageView[innerRegion.action](...innerRegion.params);
     I.pressKeyUp("Control");
     const result = await LabelStudio.serialize();
