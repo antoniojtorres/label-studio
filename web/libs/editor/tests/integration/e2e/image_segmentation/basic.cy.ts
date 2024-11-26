@@ -1,11 +1,13 @@
 import { ImageView, Labels, LabelStudio, Sidebar } from "@humansignal/frontend-test/helpers/LSF";
 
 const config = `
-  <View>
-    <RectangleLabels name="tag" toName="img">
-      <Label value="Planet"></Label>
-      <Label value="Moonwalker" background="blue"></Label>
-    </RectangleLabels>
+<View style="display: flex; align-items: flex-start;">
+    <View>
+      <RectangleLabels name="tag" toName="img">
+        <Label value="Planet"></Label>
+        <Label value="Moonwalker" background="blue"></Label>
+      </RectangleLabels>
+    </View>
     <Image name="img" value="$image"></Image>
   </View>
 `;

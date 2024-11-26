@@ -11,16 +11,18 @@ const BLUEVIOLET = {
   rgbArray: [138, 43, 226],
 };
 const getConfigWithShapes = (shapes, props = "") => `
-   <View>
-    <Image name="img" value="$image" zoom="true" zoomBy="1.5" zoomControl="true" rotateControl="true" maxWidth="750px" maxHeight="auto"/>
-    ${shapes
-      .map(
-        (shape) => `
-    <${shape}Labels ${props} name="${shape}" toName="img">
-      <Label value="${shape}" background="${BLUEVIOLET.color}"></Label>
-    </${shape}Labels>`,
-      )
-      .join("")}
+    <View style="display: flex; align-items: flex-start;">
+      <View>
+        <Image name="img" value="$image" zoom="true" zoomBy="1.5" zoomControl="true" rotateControl="true" maxWidth="750px" maxHeight="auto"/>
+      </View>
+      ${shapes
+        .map(
+          (shape) => `
+        <${shape}Labels ${props} name="${shape}" toName="img">
+          <Label value="${shape}" background="${BLUEVIOLET.color}"></Label>
+        </${shape}Labels>`,
+        )
+        .join("")}
   </View>`;
 
 const createShape = {
