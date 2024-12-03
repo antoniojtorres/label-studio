@@ -10,7 +10,6 @@ STALE_FEATURE_FLAGS = {
     'fflag_feat_front_lsdv_4620_outliner_optimization_310723_short': True,
     'fflag_fix_front_lsdv_4600_lead_time_27072023_short': False,
     'fflag_feat_front_lops_e_10_updated_ux_short': False,
-    'fflag_fix_front_lsdv_4988_dynamic_no_label_120523_short': True,
     'fflag_fix_back_lsdv_4648_annotator_filter_29052023_short': True,
     'fflag_feat_back_lsdv_5035_use_created_at_from_draft_for_annotation_256052023_short': True,
     'fflag_feat_front_lsdv_3025_outliner_filter_short': False,
