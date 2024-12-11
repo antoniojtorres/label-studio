@@ -62,6 +62,6 @@
       "description": "Path inside of bucket",
       "value": "",
       "required": false
-    },
+    }
   }
 }
