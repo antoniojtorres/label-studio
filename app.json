@@ -24,7 +24,7 @@
       "required": false
     },
     "USERNAME": {
-      "description": "Username(email) for default user",
+      "description": "EMAIL ADDRESS for default user",
       "value": "",
       "required": true
     },
@@ -32,6 +32,36 @@
       "description": "Password for default user",
       "value": "",
       "required": true
-    }
+    },
+    "STORAGE_TYPE": {
+      "description": "Permanent Storage Type",
+      "value": "S3",
+      "required": true
+    },
+    "STORAGE_AWS_ACCESS_KEY_ID": {
+      "description": "S3 Access Key",
+      "value": "",
+      "required": true
+    },
+    "STORAGE_AWS_SECRET_ACCESS_KEY": {
+      "description": "S3 Secret Key",
+      "value": "",
+      "required": true
+    },
+    "STORAGE_AWS_BUCKET_NAME": {
+      "description": "S3 Bucket Name",
+      "value": "",
+      "required": true
+    },
+    "STORAGE_AWS_REGION_NAME": {
+      "description": "AWS Region",
+      "value": "us-east-1",
+      "required": true
+    },
+    "STORAGE_AWS_FOLDER": {
+      "description": "Path inside of bucket",
+      "value": "",
+      "required": false
+    },
   }
 }
