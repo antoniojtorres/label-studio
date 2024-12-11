@@ -15,5 +15,6 @@ export DJANGO_DB='default'
 ./deploy/docker-entrypoint.sh label-studio \
   --host ${HOST:-""} \
   --port ${PORT} \
+  --log-level ${LOG_LEVEL} \
   --username ${USERNAME} \
   --password ${PASSWORD}
