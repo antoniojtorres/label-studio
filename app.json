@@ -62,6 +62,11 @@
       "description": "Path inside of bucket",
       "value": "",
       "required": false
+    },
+    "LOG_LEVEL": {
+      "description": "Log level (DEBUG, INFO, WARNING, ERROR)",
+      "value": "INFO",
+      "required": true
     }
   }
 }
