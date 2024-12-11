@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Storage type is set to: ${STORAGE_TYPE}"
+
 readonly URI_REGEX='postgres:\/\/(.+):(.+)@(.+):(.+)\/(.+)'
 
 [[ $DATABASE_URL =~ $URI_REGEX ]]
